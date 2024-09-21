@@ -3,8 +3,10 @@ import { gameStore } from "./gameStore.js";
 
 // eslint-disable-next-line react/prop-types
 export const GameStoreProvider = ({ children }) => {
-  const [userScore, setUserScore] = useState(0);
-  const [computerScore, setComputerScore] = useState(0);
+  const initialValue = 0;
+
+  const [userScore, setUserScore] = useState(initialValue);
+  const [computerScore, setComputerScore] = useState(initialValue);
   const [showRatings, setShowRatings] = useState("");
 
   const handlePlayGame = (computerChoice, userChoice) => {
@@ -14,12 +16,12 @@ export const GameStoreProvider = ({ children }) => {
       (userChoice === "scissors" && computerChoice === "paper")
     ) {
       setUserScore((preScore) => preScore + 1);
-      setShowRatings(`You Win 💙`);
+      setShowRatings("You Win 💙");
     } else if (userChoice === computerChoice) {
       setShowRatings("Draw Game 🙌");
     } else {
       setComputerScore((preScore) => preScore + 1);
-      setShowRatings(`Computer Win 🤖`);
+      setShowRatings("Computer Win 🤖");
     }
   };
 
@@ -34,9 +36,21 @@ export const GameStoreProvider = ({ children }) => {
     handlePlayGame(computerChoice, userChoice);
   };
 
+  const handleResetEveryThing = () => {
+    setUserScore(initialValue);
+    setComputerScore(initialValue);
+    setShowRatings("");
+  };
+
   return (
     <gameStore.Provider
-      value={{ userScore, computerScore, showRatings, handleUserChoice }}
+      value={{
+        userScore,
+        computerScore,
+        showRatings,
+        handleUserChoice,
+        handleResetEveryThing,
+      }}
     >
       {children}
     </gameStore.Provider>
