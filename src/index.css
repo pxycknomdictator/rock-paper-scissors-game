@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .red-shadow:hover {
+    filter: drop-shadow(0 0 12px hsl(0, 84%, 60%));
+    transition: all 0.2s ease-in-out;
+  }
+  .green-shadow:hover {
+    filter: drop-shadow(0 0 12px hsl(142, 71%, 45%));
+    transition: all 0.2s ease-in-out;
+  }
+  .blue-shadow:hover {
+    filter: drop-shadow(0 0 12px hsl(217, 91%, 60%));
+    transition: all 0.2s ease-in-out;
+  }
+}
