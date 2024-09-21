@@ -5,8 +5,8 @@ import { UserScore } from "./components/UserScore.jsx";
 
 export const App = () => {
   return (
-    <main className="min-h-screen w-full bg-slate-900 text-white">
-      <section className="w-[85%] mx-auto text-center">
+    <main className="py-6 md:py-0 min-h-screen w-full bg-slate-900 text-white">
+      <section className="w-full px-3 md:w-[85%] sm:px-7 mx-auto text-center">
         <div className="flex items-center justify-between pt-5">
           <ComputerScore />
           <UserScore />

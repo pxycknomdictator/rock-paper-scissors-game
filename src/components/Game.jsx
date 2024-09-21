@@ -8,7 +8,7 @@ export const Game = () => {
   const { handleUserChoice } = useContext(gameStore);
 
   return (
-    <div className="w-full flex items-center gap-10 justify-center mt-20 text-center text-2xl font-semibold">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 sm:gap-y-10 sm:place-items-center place-items-center gap-6 lg:flex items-center md:gap-10 justify-center mt-20 text-center text-2xl font-semibold">
       <div>
         <img
           onClick={() => handleUserChoice("rock")}
