@@ -5,6 +5,7 @@ import { gameStore } from "./gameStore.js";
 export const GameStoreProvider = ({ children }) => {
   const [userScore, setUserScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
+  const [showRatings, setShowRatings] = useState("");
 
   const handlePlayGame = (computerChoice, userChoice) => {
     if (
@@ -13,10 +14,12 @@ export const GameStoreProvider = ({ children }) => {
       (userChoice === "scissors" && computerChoice === "paper")
     ) {
       setUserScore((preScore) => preScore + 1);
+      setShowRatings(`You Win 💙`);
     } else if (userChoice === computerChoice) {
-      console.log("Game draw");
+      setShowRatings("Draw Game 🙌");
     } else {
       setComputerScore((preScore) => preScore + 1);
+      setShowRatings(`Computer Win 🤖`);
     }
   };
 
@@ -32,7 +35,9 @@ export const GameStoreProvider = ({ children }) => {
   };
 
   return (
-    <gameStore.Provider value={{ userScore, computerScore, handleUserChoice }}>
+    <gameStore.Provider
+      value={{ userScore, computerScore, showRatings, handleUserChoice }}
+    >
       {children}
     </gameStore.Provider>
   );
