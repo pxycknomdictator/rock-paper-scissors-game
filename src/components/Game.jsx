@@ -4,22 +4,31 @@ import scissor from "/images/icon-scissors.svg";
 
 export const Game = () => {
   return (
-    <div className="w-full flex items-center gap-7 justify-center mt-10">
-      <img
-        className="bg-gray-200 border-8 border-red-500 rounded-full size-[200px] p-8"
-        src={rock}
-        alt="rock"
-      />
-      <img
-        className="bg-gray-200 border-8 border-green-500 rounded-full size-[200px] p-8"
-        src={paper}
-        alt="paper"
-      />
-      <img
-        className="bg-gray-200 border-8 border-blue-500 rounded-full size-[200px] p-8"
-        src={scissor}
-        alt="scissors"
-      />
+    <div className="w-full flex items-center gap-7 justify-center mt-10 text-center text-2xl font-semibold">
+      <div>
+        <img
+          className="bg-gray-200 border-8 border-red-500 rounded-full size-[200px] p-8 cursor-pointer"
+          src={rock}
+          alt="rock"
+        />
+        <span className="mt-3 inline-block">Rock</span>
+      </div>
+      <div>
+        <img
+          className="bg-gray-200 border-8 border-green-500 rounded-full size-[200px] p-8 cursor-pointer"
+          src={paper}
+          alt="paper"
+        />
+        <span className="mt-3 inline-block">Paper</span>
+      </div>
+      <div>
+        <img
+          className="bg-gray-200 border-8 border-blue-500 rounded-full size-[200px] p-8 cursor-pointer"
+          src={scissor}
+          alt="scissors"
+        />
+        <span className="mt-3 inline-block">Scissors</span>
+      </div>
     </div>
   );
 };
